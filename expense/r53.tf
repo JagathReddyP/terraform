@@ -6,6 +6,7 @@ resource "aws_route53_record" "expense" {
   type    = "A"
   ttl     = 1
   records = [aws_instance.expense[count.index].private_ip]
+  allow_overwrite = true
 }
 
 #zone_id -- the id of hosted zone --goto route 53 on aws console--click on hosted zone
